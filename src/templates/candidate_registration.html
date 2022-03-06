@@ -1,0 +1,350 @@
+{% extends 'layout.html' %}
+{% block content %}
+<br>
+<div class="container border border-info border-top-0" >
+  <br>
+  <div class="d-flex justify-content-center">
+    <div>
+          <h3>Candidate Registration</h3>
+    </div>
+  </div>
+  <hr color="00FFFF", style="height: 1px">
+  <form method="post" action="" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="row">
+      <div class="col">
+        {{ form.first_name.label(class="form-control-label") }}
+        {% if form.first_name.errors %}
+        {{ form.first_name(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.first_name.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.first_name(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.last_name.label(class="form-control-label") }}
+        {% if form.last_name.errors %}
+        {{ form.last_name(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.last_name.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.last_name(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        {{ form.email_id.label(class="form-control-label") }}
+        {% if form.email_id.errors %}
+        {{ form.email_id(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.email_id.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.email_id(class="form-control", placeholder="Example@gmail.com") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.mobile_no.label(class="form-control-label") }}
+        {% if form.mobile_no.errors %}
+        {{ form.mobile_no(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.mobile_no.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.mobile_no(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        {{ form.state.label(class="form-control-label") }}
+        {% if form.state.errors %}
+        {{ form.state(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.state.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.state(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.city.label(class="form-control-label") }}
+        {% if form.city.errors %}
+        {{ form.city(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.city.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.city(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <hr color="00FFFF", style="height: 1px">
+    <div class="row">
+      <div class="col">
+        {{ form.ssc_board.label(class="form-control-label") }}
+        {% if form.ssc_board.errors %}
+        {{ form.ssc_board(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.ssc_board.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.ssc_board(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.ssc_marks.label(class="form-control-label") }}
+        {% if form.ssc_marks.errors %}
+        {{ form.ssc_marks(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.ssc_marks.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.ssc_marks(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        {{ form.hsc_board.label(class="form-control-label") }}
+        {% if form.hsc_board.errors %}
+        {{ form.hsc_board(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.hsc_board.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.hsc_board(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.hsc_marks.label(class="form-control-label") }}
+        {% if form.hsc_marks.errors %}
+        {{ form.hsc_marks(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.hsc_marks.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.hsc_marks(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <hr color="00FFFF", style="height: 1px">
+    <div class="row">
+      <div class="col">
+        {{ form.ug_degree.label(class="form-control-label") }}
+        {% if form.ug_degree.errors %}
+        {{ form.ug_degree(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.ug_degree.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.ug_degree(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.ug_college.label(class="form-control-label") }}
+        {% if form.ug_college.errors %}
+        {{ form.ug_college(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.ug_college.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.ug_college(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        {{ form.ug_university.label(class="form-control-label") }}
+        {% if form.ug_university.errors %}
+        {{ form.ug_university(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.ug_university.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.ug_university(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.ug_marks.label(class="form-control-label") }}
+        {% if form.ug_marks.errors %}
+        {{ form.ug_marks(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.ug_marks.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.ug_marks(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <hr color="00FFFF", style="height: 1px">
+    <div class="row">
+      <div class="col">
+        {{ form.pg_degree.label(class="form-control-label") }}
+        {% if form.pg_degree.errors %}
+        {{ form.pg_degree(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.pg_degree.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.pg_degree(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.pg_college.label(class="form-control-label") }}
+        {% if form.pg_college.errors %}
+        {{ form.pg_college(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.pg_college.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.pg_college(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        {{ form.pg_university.label(class="form-control-label") }}
+        {% if form.pg_university.errors %}
+        {{ form.pg_university(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.pg_university.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.pg_university(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.pg_marks.label(class="form-control-label") }}
+        {% if form.pg_marks.errors %}
+        {{ form.pg_marks(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.pg_marks.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.pg_marks(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <hr color="00FFFF", style="height: 1px">
+    <div class="row">
+      <div class="col">
+        {{ form.linked_link.label(class="form-control-label") }}
+        {% if form.linked_link.errors %}
+        {{ form.linked_link(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.linked_link.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.linked_link(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.skype_id.label(class="form-control-label") }}
+        {% if form.skype_id.errors %}
+        {{ form.skype_id(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.skype_id.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.skype_id(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        {{ form.skill.label(class="form-control-label") }}
+        {% if form.skill.errors %}
+        {{ form.skill(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.skill.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.skill(class="form-control") }}
+        {% endif %}
+      </div>
+      <div class="col">
+        {{ form.resume_remark.label(class="form-control-label") }}
+        {% if form.resume_remark.errors %}
+        {{ form.resume_remark(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.resume_remark.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.resume_remark(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        {{ form.resume.label(class="form-control-label") }}
+        {% if form.resume.errors %}
+        {{ form.resume(class="form-control form-control-sm is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.resume.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.resume(class="form-control") }}
+        {% endif %}
+      </div>
+    </div><br>
+    <div class="row ">
+          <div class="col d-flex justify-content-end">
+            {{ form.submit(class="btn btn-outline-info") }}
+          </div>
+    </div>
+  </form>
+</div>
+
+<br>
+{% endblock %}

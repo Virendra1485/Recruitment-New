@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block navigation %}
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('candidate.logout') }}">
+        <input class="btn btn-danger" type="submit" value="Log-out">
+    </a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <br>
+    <div class="row border-bottom mb-4">
+        <div class="col col-9 d-flex justify-content-end">
+            <h3>IndoreAi Online Assessment Result </h3>
+        </div>
+        <div class="col d-flex justify-content-end">
+
+        </div>
+    </div>
+
+
+    <div>
+        {{ login_id }} your marks = {{ marks }}
+    </div>
+</div>
+{% endblock %}

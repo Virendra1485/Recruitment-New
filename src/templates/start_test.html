@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block navigation %}
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('candidate.logout') }}">
+        <input class="btn btn-danger" type="submit" value="Log-out">
+    </a>
+</li>
+{% endblock %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="row d-flex border-bottom border-info">
+        <div class="col">
+        </div>
+        <div class="col d-flex justify-content-center">
+            <h3>Instructions</h3>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <div>
+            </div>
+        </div>
+    </div>
+    <div>
+        .
+        .
+        .
+        .
+        .
+
+    </div>
+    <div class="row d-flex justify-content-center">
+
+        {% if user.status == 1 %}
+        <a class="btn btn-primary" type="button" href="{{ url_for('candidate.test') }}">Start Test</a>
+        {% else %}
+        <a class="btn btn-primary" type="button" href="{{ url_for('candidate.candidate_result') }}">Result</a>
+        {% endif %}
+
+    </div>
+
+</div>
+{% endblock %}

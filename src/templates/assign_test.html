@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% block navigation %}
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('admin.user_list') }}"><input class="btn btn-primary" type="submit" value="Back"></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('admin.logout') }}"><input class="btn btn-danger" type="submit" value="Log-out"></a>
+</li>
+{% endblock %}
+{% block content %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center border-bottom">
+            <h3>Assign Test</h3>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col d-flex justify-content-start">
+            <h6>Login Id : {{ user.email_id }}</h6>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <h6>Full Name : {{ user.first_name }} {{ user.last_name }}   </h6>
+        </div>
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+        <a type="button" class="btn btn-primary" href="{{ url_for('admin.add_test', login_id=user.email_id) }}">Add Test</a>
+    </div>
+    <br>
+    <div class="row">
+        <table class="table m-2">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Marks</th>
+                    <th>Result Status</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% if user_test %}
+                        {% if  user_test.status == 1 %}
+                        <td>Test Started</td>
+                        {% elif  user_test.status == 2 %}
+                        <td>Test Completed</td>
+                        {% elif  user_test.status == 3 %}
+                        <td>Result Generated</td>
+                        {% else %}
+                        <td>Initial Value</td>
+                        {% endif %}
+                        <td>{{ user_test.start_time }}</td>
+                        <td>{{ user_test.end_time }}</td>
+                        <td>{{ user_test.marks }}</td>
+                        {% if user_test.result_status == 1 %}
+                        <td>Pass</td>
+                        {% elif user_test.result_status == 2 %}
+                        <td>Fail</td>
+                        {% else %}
+                        <td>Not declared</td>
+                        {%  endif %}
+                        <td><a type="button" class="btn btn-danger">Delete</a></td>
+                    {% endif %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+
+    <br>
+</div>
+{% endblock %}
